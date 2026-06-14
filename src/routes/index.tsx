@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteHeader, SiteFooter } from "@/components/site-layout";
+import { SiteHeader, SiteFooter, TrustStrip } from "@/components/site-layout";
 import {
   ArrowRight, Briefcase, Cpu, Code2, Bot, Globe2, TrendingUp, Building2,
   ShieldCheck, Users, Award, Clock, CheckCircle2, Sparkles,

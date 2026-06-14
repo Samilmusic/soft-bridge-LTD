@@ -16,12 +16,17 @@ import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as InternationalExpansionRouteImport } from './routes/international-expansion'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as DataProtectionRouteImport } from './routes/data-protection'
 import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as ComplianceRouteImport } from './routes/compliance'
+import { Route as CompanyInformationRouteImport } from './routes/company-information'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as BusinessModelRouteImport } from './routes/business-model'
 import { Route as AcceptableUseRouteImport } from './routes/acceptable-use'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -61,6 +66,11 @@ const IndustriesRoute = IndustriesRouteImport.update({
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HowWeWorkRoute = HowWeWorkRouteImport.update({
+  id: '/how-we-work',
+  path: '/how-we-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
@@ -86,9 +96,29 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComplianceRoute = ComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompanyInformationRoute = CompanyInformationRouteImport.update({
+  id: '/company-information',
+  path: '/company-information',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessModelRoute = BusinessModelRouteImport.update({
+  id: '/business-model',
+  path: '/business-model',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AcceptableUseRoute = AcceptableUseRouteImport.update({
@@ -111,12 +141,17 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/acceptable-use': typeof AcceptableUseRoute
+  '/business-model': typeof BusinessModelRoute
+  '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/company-information': typeof CompanyInformationRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/data-protection': typeof DataProtectionRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
+  '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/international-expansion': typeof InternationalExpansionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -129,12 +164,17 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/acceptable-use': typeof AcceptableUseRoute
+  '/business-model': typeof BusinessModelRoute
+  '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/company-information': typeof CompanyInformationRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/data-protection': typeof DataProtectionRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
+  '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/international-expansion': typeof InternationalExpansionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -148,12 +188,17 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/acceptable-use': typeof AcceptableUseRoute
+  '/business-model': typeof BusinessModelRoute
+  '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/company-information': typeof CompanyInformationRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
   '/data-protection': typeof DataProtectionRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
+  '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/international-expansion': typeof InternationalExpansionRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
@@ -168,12 +213,17 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/acceptable-use'
+    | '/business-model'
+    | '/careers'
     | '/case-studies'
+    | '/company-information'
+    | '/compliance'
     | '/contact'
     | '/cookie-policy'
     | '/data-protection'
     | '/disclaimer'
     | '/faq'
+    | '/how-we-work'
     | '/industries'
     | '/international-expansion'
     | '/privacy-policy'
@@ -186,12 +236,17 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/acceptable-use'
+    | '/business-model'
+    | '/careers'
     | '/case-studies'
+    | '/company-information'
+    | '/compliance'
     | '/contact'
     | '/cookie-policy'
     | '/data-protection'
     | '/disclaimer'
     | '/faq'
+    | '/how-we-work'
     | '/industries'
     | '/international-expansion'
     | '/privacy-policy'
@@ -204,12 +259,17 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/acceptable-use'
+    | '/business-model'
+    | '/careers'
     | '/case-studies'
+    | '/company-information'
+    | '/compliance'
     | '/contact'
     | '/cookie-policy'
     | '/data-protection'
     | '/disclaimer'
     | '/faq'
+    | '/how-we-work'
     | '/industries'
     | '/international-expansion'
     | '/privacy-policy'
@@ -223,12 +283,17 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AcceptableUseRoute: typeof AcceptableUseRoute
+  BusinessModelRoute: typeof BusinessModelRoute
+  CareersRoute: typeof CareersRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
+  CompanyInformationRoute: typeof CompanyInformationRoute
+  ComplianceRoute: typeof ComplianceRoute
   ContactRoute: typeof ContactRoute
   CookiePolicyRoute: typeof CookiePolicyRoute
   DataProtectionRoute: typeof DataProtectionRoute
   DisclaimerRoute: typeof DisclaimerRoute
   FaqRoute: typeof FaqRoute
+  HowWeWorkRoute: typeof HowWeWorkRoute
   IndustriesRoute: typeof IndustriesRoute
   InternationalExpansionRoute: typeof InternationalExpansionRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
@@ -289,6 +354,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/how-we-work': {
+      id: '/how-we-work'
+      path: '/how-we-work'
+      fullPath: '/how-we-work'
+      preLoaderRoute: typeof HowWeWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq': {
       id: '/faq'
       path: '/faq'
@@ -324,11 +396,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compliance': {
+      id: '/compliance'
+      path: '/compliance'
+      fullPath: '/compliance'
+      preLoaderRoute: typeof ComplianceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/company-information': {
+      id: '/company-information'
+      path: '/company-information'
+      fullPath: '/company-information'
+      preLoaderRoute: typeof CompanyInformationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/case-studies': {
       id: '/case-studies'
       path: '/case-studies'
       fullPath: '/case-studies'
       preLoaderRoute: typeof CaseStudiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business-model': {
+      id: '/business-model'
+      path: '/business-model'
+      fullPath: '/business-model'
+      preLoaderRoute: typeof BusinessModelRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/acceptable-use': {
@@ -359,12 +459,17 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AcceptableUseRoute: AcceptableUseRoute,
+  BusinessModelRoute: BusinessModelRoute,
+  CareersRoute: CareersRoute,
   CaseStudiesRoute: CaseStudiesRoute,
+  CompanyInformationRoute: CompanyInformationRoute,
+  ComplianceRoute: ComplianceRoute,
   ContactRoute: ContactRoute,
   CookiePolicyRoute: CookiePolicyRoute,
   DataProtectionRoute: DataProtectionRoute,
   DisclaimerRoute: DisclaimerRoute,
   FaqRoute: FaqRoute,
+  HowWeWorkRoute: HowWeWorkRoute,
   IndustriesRoute: IndustriesRoute,
   InternationalExpansionRoute: InternationalExpansionRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShieldCheck, Globe2, Cpu, TrendingUp, Handshake } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -8,10 +8,12 @@ const NAV = [
   { to: "/services", label: "Services" },
   { to: "/industries", label: "Industries" },
   { to: "/case-studies", label: "Case Studies" },
+  { to: "/how-we-work", label: "How We Work" },
   { to: "/international-expansion", label: "International" },
-  { to: "/faq", label: "FAQ" },
+  { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
 ] as const;
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -118,6 +120,11 @@ export function SiteFooter() {
                 ["/industries", "Industries"],
                 ["/case-studies", "Case Studies"],
                 ["/international-expansion", "International Expansion"],
+                ["/how-we-work", "How We Work"],
+                ["/business-model", "Business Model"],
+                ["/company-information", "Company Information"],
+                ["/compliance", "Compliance"],
+                ["/careers", "Careers"],
                 ["/contact", "Contact"],
               ].map(([to, label]) => (
                 <li key={to}>
@@ -126,6 +133,7 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
+
 
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Legal</h4>
@@ -184,3 +192,29 @@ export function PageHero({ eyebrow, title, description }: { eyebrow?: string; ti
     </section>
   );
 }
+
+const TRUST = [
+  { icon: ShieldCheck, label: "UK Registered Company" },
+  { icon: Globe2, label: "International Consulting Services" },
+  { icon: Cpu, label: "Technology & Software Solutions" },
+  { icon: TrendingUp, label: "Business Transformation Expertise" },
+  { icon: Handshake, label: "Long-Term Client Partnerships" },
+];
+
+export function TrustStrip() {
+  return (
+    <section className="border-y border-border bg-surface">
+      <div className="container-page py-6">
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 lg:grid-cols-5">
+          {TRUST.map((t) => (
+            <li key={t.label} className="flex items-center gap-2.5 text-xs font-medium text-navy">
+              <t.icon className="h-4 w-4 flex-shrink-0 text-primary" />
+              <span>{t.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+

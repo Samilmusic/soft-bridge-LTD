@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShieldCheck, Globe2, Cpu, TrendingUp, Handshake } from "lucide-react";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -8,10 +8,12 @@ const NAV = [
   { to: "/services", label: "Services" },
   { to: "/industries", label: "Industries" },
   { to: "/case-studies", label: "Case Studies" },
+  { to: "/how-we-work", label: "How We Work" },
   { to: "/international-expansion", label: "International" },
-  { to: "/faq", label: "FAQ" },
+  { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
 ] as const;
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);

@@ -192,3 +192,29 @@ export function PageHero({ eyebrow, title, description }: { eyebrow?: string; ti
     </section>
   );
 }
+
+const TRUST = [
+  { icon: ShieldCheck, label: "UK Registered Company" },
+  { icon: Globe2, label: "International Consulting Services" },
+  { icon: Cpu, label: "Technology & Software Solutions" },
+  { icon: TrendingUp, label: "Business Transformation Expertise" },
+  { icon: Handshake, label: "Long-Term Client Partnerships" },
+];
+
+export function TrustStrip() {
+  return (
+    <section className="border-y border-border bg-surface">
+      <div className="container-page py-6">
+        <ul className="grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3 lg:grid-cols-5">
+          {TRUST.map((t) => (
+            <li key={t.label} className="flex items-center gap-2.5 text-xs font-medium text-navy">
+              <t.icon className="h-4 w-4 flex-shrink-0 text-primary" />
+              <span>{t.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+

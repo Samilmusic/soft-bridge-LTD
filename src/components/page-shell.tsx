@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { SiteHeader, SiteFooter, PageHero } from "./site-layout";
+import { SiteHeader, SiteFooter, PageHero, TrustStrip } from "./site-layout";
 
 export function PageShell({
   eyebrow, title, description, children,
@@ -9,6 +9,7 @@ export function PageShell({
       <SiteHeader />
       <main className="flex-1">
         <PageHero eyebrow={eyebrow} title={title} description={description} />
+        <TrustStrip />
         <div className="container-page section-y">{children}</div>
       </main>
       <SiteFooter />

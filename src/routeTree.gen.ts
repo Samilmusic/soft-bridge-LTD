@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as InternationalExpansionRouteImport } from './routes/international-expansion'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as AboutRouteImport } from './routes/about'
@@ -18,6 +19,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InternationalExpansionRoute = InternationalExpansionRouteImport.update({
+  id: '/international-expansion',
+  path: '/international-expansion',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesRoute = IndustriesRouteImport.update({
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/case-studies': typeof CaseStudiesRoute
   '/industries': typeof IndustriesRoute
+  '/international-expansion': typeof InternationalExpansionRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/case-studies': typeof CaseStudiesRoute
   '/industries': typeof IndustriesRoute
+  '/international-expansion': typeof InternationalExpansionRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesById {
@@ -61,19 +69,33 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/case-studies': typeof CaseStudiesRoute
   '/industries': typeof IndustriesRoute
+  '/international-expansion': typeof InternationalExpansionRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/case-studies' | '/industries' | '/services'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/case-studies'
+    | '/industries'
+    | '/international-expansion'
+    | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/case-studies' | '/industries' | '/services'
+  to:
+    | '/'
+    | '/about'
+    | '/case-studies'
+    | '/industries'
+    | '/international-expansion'
+    | '/services'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/case-studies'
     | '/industries'
+    | '/international-expansion'
     | '/services'
   fileRoutesById: FileRoutesById
 }
@@ -82,6 +104,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
   IndustriesRoute: typeof IndustriesRoute
+  InternationalExpansionRoute: typeof InternationalExpansionRoute
   ServicesRoute: typeof ServicesRoute
 }
 
@@ -92,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/services'
       fullPath: '/services'
       preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/international-expansion': {
+      id: '/international-expansion'
+      path: '/international-expansion'
+      fullPath: '/international-expansion'
+      preLoaderRoute: typeof InternationalExpansionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/industries': {
@@ -130,6 +160,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CaseStudiesRoute: CaseStudiesRoute,
   IndustriesRoute: IndustriesRoute,
+  InternationalExpansionRoute: InternationalExpansionRoute,
   ServicesRoute: ServicesRoute,
 }
 export const routeTree = rootRouteImport

@@ -107,6 +107,8 @@ function HomePage() {
           </div>
         </section>
 
+        <TrustStrip />
+
         {/* SERVICES */}
         <section className="section-y">
           <div className="container-page">

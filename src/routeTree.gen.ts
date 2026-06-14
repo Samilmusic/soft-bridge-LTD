@@ -17,6 +17,7 @@ import { Route as InternationalExpansionRouteImport } from './routes/internation
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as DataProtectionRouteImport } from './routes/data-protection'
 import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
@@ -63,6 +64,11 @@ const DisclaimerRoute = DisclaimerRouteImport.update({
   path: '/disclaimer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DataProtectionRoute = DataProtectionRouteImport.update({
+  id: '/data-protection',
+  path: '/data-protection',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CookiePolicyRoute = CookiePolicyRouteImport.update({
   id: '/cookie-policy',
   path: '/cookie-policy',
@@ -95,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
+  '/data-protection': typeof DataProtectionRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
   '/industries': typeof IndustriesRoute
@@ -110,6 +117,7 @@ export interface FileRoutesByTo {
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
+  '/data-protection': typeof DataProtectionRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
   '/industries': typeof IndustriesRoute
@@ -126,6 +134,7 @@ export interface FileRoutesById {
   '/case-studies': typeof CaseStudiesRoute
   '/contact': typeof ContactRoute
   '/cookie-policy': typeof CookiePolicyRoute
+  '/data-protection': typeof DataProtectionRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faq': typeof FaqRoute
   '/industries': typeof IndustriesRoute
@@ -143,6 +152,7 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/contact'
     | '/cookie-policy'
+    | '/data-protection'
     | '/disclaimer'
     | '/faq'
     | '/industries'
@@ -158,6 +168,7 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/contact'
     | '/cookie-policy'
+    | '/data-protection'
     | '/disclaimer'
     | '/faq'
     | '/industries'
@@ -173,6 +184,7 @@ export interface FileRouteTypes {
     | '/case-studies'
     | '/contact'
     | '/cookie-policy'
+    | '/data-protection'
     | '/disclaimer'
     | '/faq'
     | '/industries'
@@ -189,6 +201,7 @@ export interface RootRouteChildren {
   CaseStudiesRoute: typeof CaseStudiesRoute
   ContactRoute: typeof ContactRoute
   CookiePolicyRoute: typeof CookiePolicyRoute
+  DataProtectionRoute: typeof DataProtectionRoute
   DisclaimerRoute: typeof DisclaimerRoute
   FaqRoute: typeof FaqRoute
   IndustriesRoute: typeof IndustriesRoute
@@ -257,6 +270,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DisclaimerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/data-protection': {
+      id: '/data-protection'
+      path: '/data-protection'
+      fullPath: '/data-protection'
+      preLoaderRoute: typeof DataProtectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cookie-policy': {
       id: '/cookie-policy'
       path: '/cookie-policy'
@@ -301,6 +321,7 @@ const rootRouteChildren: RootRouteChildren = {
   CaseStudiesRoute: CaseStudiesRoute,
   ContactRoute: ContactRoute,
   CookiePolicyRoute: CookiePolicyRoute,
+  DataProtectionRoute: DataProtectionRoute,
   DisclaimerRoute: DisclaimerRoute,
   FaqRoute: FaqRoute,
   IndustriesRoute: IndustriesRoute,

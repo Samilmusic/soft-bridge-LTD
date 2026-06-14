@@ -118,6 +118,11 @@ export function SiteFooter() {
                 ["/industries", "Industries"],
                 ["/case-studies", "Case Studies"],
                 ["/international-expansion", "International Expansion"],
+                ["/how-we-work", "How We Work"],
+                ["/business-model", "Business Model"],
+                ["/company-information", "Company Information"],
+                ["/compliance", "Compliance"],
+                ["/careers", "Careers"],
                 ["/contact", "Contact"],
               ].map(([to, label]) => (
                 <li key={to}>
@@ -126,6 +131,7 @@ export function SiteFooter() {
               ))}
             </ul>
           </div>
+
 
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Legal</h4>

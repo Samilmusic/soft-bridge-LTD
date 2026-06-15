@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
 import { TEAM } from "@/data/team";
-import { ShieldCheck, Lightbulb, Award, Zap, Handshake, Heart, Cpu, Globe2, Users, Building2, ArrowRight, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Lightbulb, Award, Zap, Handshake, Heart, Cpu, Globe2, Users, Building2, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

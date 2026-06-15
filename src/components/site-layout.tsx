@@ -165,8 +165,8 @@ export function SiteFooter() {
               United Kingdom<br />
               <span className="mt-2 block">Company No: 561070</span>
               <span className="block">Registered in England and Wales</span>
-              <a href="tel:+441111111111" className="mt-3 block text-white hover:underline">
-                +44 1111 111111
+              <a href="tel:+447414233666" className="mt-3 block text-white hover:underline">
+                +44 7414 23366
               </a>
               <a href="mailto:info@softbridgeltd.co.uk" className="mt-1 block text-white hover:underline">
                 info@softbridgeltd.co.uk

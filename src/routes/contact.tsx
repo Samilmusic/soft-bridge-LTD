@@ -94,7 +94,7 @@ function ContactPage() {
                 <Building2 className="h-5 w-5 flex-shrink-0 text-primary" />
                 <div>
                   <p className="font-semibold text-navy">SOFT BRIDGE LTD</p>
-                  <p className="text-muted-foreground">Company Number: [INSERT COMPANY NUMBER]</p>
+                  <p className="text-muted-foreground">Company Number: 561070</p>
                   <p className="text-muted-foreground">Registered in England and Wales</p>
                 </div>
               </div>

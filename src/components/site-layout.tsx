@@ -161,7 +161,7 @@ export function SiteFooter() {
               5 Brayford Square<br />
               London E1 0SG<br />
               United Kingdom<br />
-              <span className="mt-2 block">Company No: [INSERT COMPANY NUMBER]</span>
+              <span className="mt-2 block">Company No: 561070</span>
               <span className="block">Registered in England and Wales</span>
               <a href="mailto:info@softbridgeltd.co.uk" className="mt-2 block text-white hover:underline">
                 info@softbridgeltd.co.uk
@@ -172,7 +172,7 @@ export function SiteFooter() {
 
         <div className="mt-10 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/60 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Soft Bridge Ltd. All rights reserved.</p>
-          <p>Registered in England and Wales — Company Number [INSERT COMPANY NUMBER]</p>
+          <p>Registered in England and Wales — Company Number 561070</p>
         </div>
       </div>
     </footer>

@@ -14,7 +14,7 @@ export const Route = createFileRoute("/company-information")({
 
 const rows = [
   { icon: Building2, label: "Company Name", value: "SOFT BRIDGE LTD" },
-  { icon: Hash, label: "Company Number", value: "[INSERT COMPANY NUMBER]" },
+  { icon: Hash, label: "Company Number", value: "561070" },
   { icon: Scale, label: "Registered In", value: "England and Wales" },
   { icon: MapPin, label: "Registered Office", value: "5 Brayford Square, London E1 0SG, United Kingdom" },
   { icon: Globe, label: "Website", value: "https://softbridgeltd.co.uk" },

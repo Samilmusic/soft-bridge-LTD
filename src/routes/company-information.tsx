@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
-import { Building2, Hash, MapPin, Globe, Mail, Scale, Briefcase } from "lucide-react";
+import { Building2, Hash, MapPin, Globe, Mail, Scale, Briefcase, Phone, MonitorSmartphone } from "lucide-react";
 
 export const Route = createFileRoute("/company-information")({
   head: () => ({ meta: [
@@ -19,13 +19,16 @@ const rows = [
   { icon: MapPin, label: "Registered Office", value: "5 Brayford Square, London E1 0SG, United Kingdom" },
   { icon: Globe, label: "Website", value: "https://softbridgeltd.co.uk" },
   { icon: Mail, label: "Email", value: "info@softbridgeltd.co.uk" },
+  { icon: Phone, label: "Phone", value: "+44 1111 111111" },
 ];
 
 const activities = [
   "Information Technology Consultancy",
   "Software Development",
-  "Advertising & Digital Marketing",
+  "Digital Marketing",
   "Management Consultancy",
+  "AI & Automation Solutions",
+  "Business Advisory Services",
 ];
 
 function CompanyInformation() {
@@ -71,6 +74,16 @@ function CompanyInformation() {
           </p>
         </aside>
       </div>
+
+      <section className="mt-16">
+        <div className="flex items-center gap-3">
+          <MonitorSmartphone className="h-6 w-6 text-primary" />
+          <h2 className="text-2xl font-bold text-navy md:text-3xl">Operational Presence</h2>
+        </div>
+        <p className="mt-4 max-w-3xl text-[15px] leading-relaxed text-muted-foreground">
+          SOFT BRIDGE LTD serves international clients through remote consulting, digital delivery, software development and online project management. Client communication, project delivery and support are managed through secure digital channels.
+        </p>
+      </section>
     </PageShell>
   );
 }

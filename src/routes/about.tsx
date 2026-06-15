@@ -142,6 +142,5 @@ function AboutPage() {
     </PageShell>
   );
 }
-
-// suppress unused warning in case CheckCircle2 isn't used inline
-void CheckCircle2;
+  );
+}

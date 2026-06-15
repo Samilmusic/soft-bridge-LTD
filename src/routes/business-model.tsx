@@ -81,19 +81,19 @@ function BusinessModelPage() {
         <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
           Indicative pricing for the most common engagement types. Actual pricing depends on project scope, complexity, timelines and support requirements.
         </p>
-        <div className="mt-8 overflow-hidden rounded-2xl border border-border">
-          <table className="w-full text-left text-sm">
+        <div className="mt-8 overflow-x-auto rounded-2xl border border-border">
+          <table className="w-full min-w-[420px] text-left text-sm">
             <thead className="bg-surface text-xs font-semibold uppercase tracking-widest text-primary">
               <tr>
-                <th className="px-6 py-4">Engagement Type</th>
-                <th className="px-6 py-4">Indicative Range (GBP)</th>
+                <th className="px-4 py-3 sm:px-6 sm:py-4">Engagement Type</th>
+                <th className="px-4 py-3 sm:px-6 sm:py-4">Indicative Range (GBP)</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border bg-card">
               {ranges.map((r) => (
                 <tr key={r.t}>
-                  <td className="px-6 py-4 font-medium text-navy">{r.t}</td>
-                  <td className="px-6 py-4 font-semibold text-navy">{r.v}</td>
+                  <td className="px-4 py-3 font-medium text-navy sm:px-6 sm:py-4">{r.t}</td>
+                  <td className="px-4 py-3 font-semibold text-navy sm:px-6 sm:py-4">{r.v}</td>
                 </tr>
               ))}
             </tbody>

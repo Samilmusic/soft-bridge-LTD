@@ -7,6 +7,7 @@ const NAV = [
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
   { to: "/industries", label: "Industries" },
+  { to: "/leadership", label: "Leadership" },
   { to: "/case-studies", label: "Case Studies" },
   { to: "/how-we-work", label: "How We Work" },
   { to: "/international-expansion", label: "International" },
@@ -118,6 +119,7 @@ export function SiteFooter() {
                 ["/about", "About"],
                 ["/services", "Services"],
                 ["/industries", "Industries"],
+                ["/leadership", "Leadership"],
                 ["/case-studies", "Case Studies"],
                 ["/international-expansion", "International Expansion"],
                 ["/how-we-work", "How We Work"],
@@ -163,7 +165,10 @@ export function SiteFooter() {
               United Kingdom<br />
               <span className="mt-2 block">Company No: 561070</span>
               <span className="block">Registered in England and Wales</span>
-              <a href="mailto:info@softbridgeltd.co.uk" className="mt-2 block text-white hover:underline">
+              <a href="tel:+441111111111" className="mt-3 block text-white hover:underline">
+                +44 1111 111111
+              </a>
+              <a href="mailto:info@softbridgeltd.co.uk" className="mt-1 block text-white hover:underline">
                 info@softbridgeltd.co.uk
               </a>
             </address>

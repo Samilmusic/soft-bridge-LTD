@@ -1,8 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
 import { useState } from "react";
-import { Mail, MapPin, Building2, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Building2, CheckCircle2, Phone } from "lucide-react";
 import { z } from "zod";
+import { TEAM } from "@/data/team";
+import { COMPANY } from "@/data/company";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -93,22 +95,28 @@ function ContactPage() {
               <div className="flex gap-3">
                 <Building2 className="h-5 w-5 flex-shrink-0 text-primary" />
                 <div>
-                  <p className="font-semibold text-navy">SOFT BRIDGE LTD</p>
-                  <p className="text-muted-foreground">Company Number: [INSERT COMPANY NUMBER]</p>
-                  <p className="text-muted-foreground">Registered in England and Wales</p>
+                  <p className="font-semibold text-navy">{COMPANY.name}</p>
+                  <p className="text-muted-foreground">Company Number: {COMPANY.number}</p>
+                  <p className="text-muted-foreground">Registered in {COMPANY.jurisdiction}</p>
                 </div>
               </div>
               <div className="flex gap-3">
                 <MapPin className="h-5 w-5 flex-shrink-0 text-primary" />
                 <div>
                   <p className="font-semibold text-navy">Registered Office</p>
-                  <p className="text-muted-foreground">5 Brayford Square<br />London E1 0SG<br />United Kingdom</p>
+                  <p className="text-muted-foreground">{COMPANY.address.line1}<br />{COMPANY.address.city} {COMPANY.address.postcode}<br />{COMPANY.address.country}</p>
                 </div>
               </div>
               <div className="flex gap-3">
+                <Phone className="h-5 w-5 flex-shrink-0 text-primary" />
+                <a href={`tel:${COMPANY.phoneTel}`} className="font-semibold text-navy hover:text-primary">
+                  {COMPANY.phone}
+                </a>
+              </div>
+              <div className="flex gap-3">
                 <Mail className="h-5 w-5 flex-shrink-0 text-primary" />
-                <a href="mailto:info@softbridgeltd.co.uk" className="font-semibold text-navy hover:text-primary">
-                  info@softbridgeltd.co.uk
+                <a href={`mailto:${COMPANY.email}`} className="font-semibold text-navy hover:text-primary">
+                  {COMPANY.email}
                 </a>
               </div>
             </div>
@@ -126,6 +134,29 @@ function ContactPage() {
           </div>
         </aside>
       </div>
+
+      <section className="mt-16">
+        <span className="eyebrow">Leadership Contacts</span>
+        <h2 className="mt-4 text-2xl font-bold text-navy md:text-3xl">Direct enquiry routing</h2>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+          Enquiries received via our contact form are routed to the appropriate member of the leadership team.
+        </p>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {TEAM.map((m) => (
+            <div key={m.slug} className="card-elevated">
+              <p className="text-xs font-semibold uppercase tracking-widest text-primary">{m.contactFor}</p>
+              <h3 className="mt-3 text-base font-bold text-navy">{m.name}</h3>
+              <p className="text-sm text-muted-foreground">{m.position}</p>
+              <a
+                href={`mailto:${COMPANY.email}?subject=${encodeURIComponent(m.contactFor + " — Attn: " + m.name)}`}
+                className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-primary hover:underline"
+              >
+                <Mail className="h-3.5 w-3.5" /> Send Enquiry
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
     </PageShell>
   );
 }

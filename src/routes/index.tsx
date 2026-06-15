@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, TrustStrip } from "@/components/site-layout";
+import { TEAM } from "@/data/team";
 import {
   ArrowRight, Briefcase, Cpu, Code2, Bot, Globe2, TrendingUp, Building2,
   ShieldCheck, Users, Award, Clock, CheckCircle2, Sparkles,
@@ -200,6 +201,46 @@ function HomePage() {
                   {i}
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* LEADERSHIP */}
+        <section className="section-y bg-surface">
+          <div className="container-page">
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div className="max-w-2xl">
+                <span className="eyebrow"><Users className="h-3.5 w-3.5" /> Leadership</span>
+                <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">Meet Our Leadership Team</h2>
+                <p className="mt-3 text-muted-foreground">
+                  A multidisciplinary team with deep expertise across strategy, technology, sales and operations.
+                </p>
+              </div>
+            </div>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {TEAM.map((m) => (
+                <div key={m.slug} className="card-elevated card-elevated-hover text-center">
+                  <div
+                    className="mx-auto grid h-16 w-16 place-items-center rounded-xl font-display text-lg font-bold text-primary-foreground"
+                    style={{ background: "var(--gradient-primary)" }}
+                    aria-hidden
+                  >
+                    {m.initials}
+                  </div>
+                  <h3 className="mt-4 text-base font-bold text-navy">{m.name}</h3>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">{m.position}</p>
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{m.expertise.slice(0, 3).join(" · ")}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-8">
+              <Link
+                to="/leadership"
+                className="inline-flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:shadow-md"
+                style={{ background: "var(--gradient-primary)" }}
+              >
+                View Leadership Team <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </section>

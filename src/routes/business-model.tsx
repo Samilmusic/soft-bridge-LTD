@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
-import { Briefcase, Cpu, Code2, Database, Bot, Megaphone, RefreshCw, Headphones, Settings, TrendingUp } from "lucide-react";
+import { Briefcase, Cpu, Code2, Database, Bot, Megaphone, RefreshCw, Headphones, TrendingUp, Wallet } from "lucide-react";
 
 export const Route = createFileRoute("/business-model")({
   head: () => ({ meta: [
-    { title: "Business Model — Soft Bridge Ltd" },
+    { title: "How Soft Bridge Works — Business Model" },
     { name: "description", content: "How Soft Bridge Ltd generates revenue across consulting, software development, automation, marketing and long-term client engagements." },
-    { property: "og:title", content: "Business Model — Soft Bridge Ltd" },
+    { property: "og:title", content: "How Soft Bridge Works — Business Model" },
     { property: "og:description", content: "Diversified revenue across consulting, technology and long-term partnerships." },
   ] }),
   component: BusinessModelPage,
@@ -15,21 +15,28 @@ export const Route = createFileRoute("/business-model")({
 const sources = [
   { icon: Briefcase, t: "Business Consulting Projects", d: "Scoped engagements covering strategy, operations and growth." },
   { icon: Cpu, t: "Technology Consulting", d: "IT strategy, architecture and transformation advisory." },
-  { icon: Code2, t: "Software Development Projects", d: "Custom software, SaaS platforms and business applications." },
-  { icon: Database, t: "CRM & Client Portal Development", d: "Customer-facing systems and internal client portals." },
+  { icon: Code2, t: "Software Development", d: "Custom software, SaaS platforms and business applications." },
+  { icon: Database, t: "CRM & Portal Development", d: "Customer-facing systems and internal client portals." },
   { icon: Bot, t: "AI Automation Solutions", d: "Workflow automation, AI assistants and intelligent reporting." },
   { icon: Megaphone, t: "Digital Marketing Services", d: "SEO, paid acquisition and lead generation campaigns." },
-  { icon: RefreshCw, t: "Monthly Retainer Agreements", d: "Recurring consulting and managed-service engagements." },
   { icon: Headphones, t: "Enterprise Support Contracts", d: "Long-term support, maintenance and optimization." },
-  { icon: Settings, t: "Custom Business Systems", d: "Bespoke management systems and operational dashboards." },
-  { icon: TrendingUp, t: "Operational Improvement Projects", d: "Performance, process and efficiency engagements." },
+  { icon: TrendingUp, t: "Business Transformation Projects", d: "Operational, technology and growth transformation engagements." },
+  { icon: RefreshCw, t: "Long-Term Retainer Agreements", d: "Recurring consulting and managed-service relationships." },
+];
+
+const ranges = [
+  { t: "Consulting Projects", v: "£1,500 – £5,000" },
+  { t: "Software Development Projects", v: "£5,000 – £30,000" },
+  { t: "CRM & Automation Projects", v: "£3,000 – £25,000" },
+  { t: "Monthly Retainers", v: "£750 – £5,000" },
+  { t: "Enterprise Projects", v: "Custom quotation" },
 ];
 
 function BusinessModelPage() {
   return (
     <PageShell
       eyebrow="Business Model"
-      title="How Soft Bridge Ltd Generates Revenue"
+      title="How Soft Bridge Works"
       description="A diversified consulting and technology revenue model combining project-based engagements with long-term client partnerships."
     >
       <div className="grid gap-6 lg:grid-cols-2">
@@ -64,6 +71,37 @@ function BusinessModelPage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="mt-16">
+        <div className="flex items-center gap-3">
+          <Wallet className="h-6 w-6 text-primary" />
+          <h2 className="text-2xl font-bold text-navy md:text-3xl">Typical Engagement Ranges</h2>
+        </div>
+        <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+          Indicative pricing for the most common engagement types. Actual pricing depends on project scope, complexity, timelines and support requirements.
+        </p>
+        <div className="mt-8 overflow-hidden rounded-2xl border border-border">
+          <table className="w-full text-left text-sm">
+            <thead className="bg-surface text-xs font-semibold uppercase tracking-widest text-primary">
+              <tr>
+                <th className="px-6 py-4">Engagement Type</th>
+                <th className="px-6 py-4">Indicative Range (GBP)</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-border bg-card">
+              {ranges.map((r) => (
+                <tr key={r.t}>
+                  <td className="px-6 py-4 font-medium text-navy">{r.t}</td>
+                  <td className="px-6 py-4 font-semibold text-navy">{r.v}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 rounded-lg bg-primary/5 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+          Actual pricing depends on project scope, complexity, timelines and support requirements. All engagements are confirmed in a written proposal prior to commencement.
+        </p>
       </section>
     </PageShell>
   );

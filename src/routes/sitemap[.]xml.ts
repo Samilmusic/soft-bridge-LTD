@@ -6,7 +6,7 @@ const BASE_URL = "";
 const paths = [
   "/", "/about", "/services", "/industries", "/case-studies",
   "/international-expansion", "/how-we-work", "/business-model",
-  "/company-information", "/compliance", "/careers", "/faq", "/contact",
+  "/company-information", "/compliance", "/leadership", "/careers", "/faq", "/contact",
   "/privacy-policy", "/terms", "/refund-policy", "/cookie-policy",
   "/disclaimer", "/data-protection", "/acceptable-use",
 ];

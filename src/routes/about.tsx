@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/page-shell";
-import { ShieldCheck, Lightbulb, Award, Zap, Handshake, Heart, Cpu, Globe2, Users, Building2 } from "lucide-react";
+import { TEAM } from "@/data/team";
+import { ShieldCheck, Lightbulb, Award, Zap, Handshake, Heart, Cpu, Globe2, Users, Building2, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -90,6 +91,42 @@ function AboutPage() {
       </section>
 
       <section className="mt-20">
+        <span className="eyebrow"><Users className="h-3.5 w-3.5" /> Leadership & Management Team</span>
+        <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">The team behind Soft Bridge Ltd</h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          A multidisciplinary leadership team spanning strategy, technology, sales and operations.
+        </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {TEAM.map((m) => (
+            <article key={m.slug} className="card-elevated card-elevated-hover">
+              <div className="flex items-start gap-4">
+                <div
+                  className="grid h-14 w-14 flex-shrink-0 place-items-center rounded-xl font-display text-lg font-bold text-primary-foreground"
+                  style={{ background: "var(--gradient-primary)" }}
+                  aria-hidden
+                >
+                  {m.initials}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-navy">{m.name}</h3>
+                  <p className="text-sm font-semibold text-primary">{m.position}</p>
+                </div>
+              </div>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{m.bio}</p>
+              <ul className="mt-4 flex flex-wrap gap-2">
+                {m.expertise.map((e) => (
+                  <li key={e} className="rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-navy">{e}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+        <Link to="/leadership" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+          View full leadership profiles <ArrowRight className="h-4 w-4" />
+        </Link>
+      </section>
+
+      <section className="mt-20">
         <span className="eyebrow">Why Clients Choose Us</span>
         <h2 className="mt-4 text-3xl font-bold text-navy md:text-4xl">A partner you can build with</h2>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -105,3 +142,6 @@ function AboutPage() {
     </PageShell>
   );
 }
+
+// suppress unused warning in case CheckCircle2 isn't used inline
+void CheckCircle2;

@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as InternationalExpansionRouteImport } from './routes/international-expansion'
 import { Route as IndustriesRouteImport } from './routes/industries'
 import { Route as HowWeWorkRouteImport } from './routes/how-we-work'
@@ -54,6 +55,11 @@ const RefundPolicyRoute = RefundPolicyRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeadershipRoute = LeadershipRouteImport.update({
+  id: '/leadership',
+  path: '/leadership',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InternationalExpansionRoute = InternationalExpansionRouteImport.update({
@@ -154,6 +160,7 @@ export interface FileRoutesByFullPath {
   '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/international-expansion': typeof InternationalExpansionRoute
+  '/leadership': typeof LeadershipRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
@@ -177,6 +184,7 @@ export interface FileRoutesByTo {
   '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/international-expansion': typeof InternationalExpansionRoute
+  '/leadership': typeof LeadershipRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
@@ -201,6 +209,7 @@ export interface FileRoutesById {
   '/how-we-work': typeof HowWeWorkRoute
   '/industries': typeof IndustriesRoute
   '/international-expansion': typeof InternationalExpansionRoute
+  '/leadership': typeof LeadershipRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/services': typeof ServicesRoute
@@ -226,6 +235,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/industries'
     | '/international-expansion'
+    | '/leadership'
     | '/privacy-policy'
     | '/refund-policy'
     | '/services'
@@ -249,6 +259,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/industries'
     | '/international-expansion'
+    | '/leadership'
     | '/privacy-policy'
     | '/refund-policy'
     | '/services'
@@ -272,6 +283,7 @@ export interface FileRouteTypes {
     | '/how-we-work'
     | '/industries'
     | '/international-expansion'
+    | '/leadership'
     | '/privacy-policy'
     | '/refund-policy'
     | '/services'
@@ -296,6 +308,7 @@ export interface RootRouteChildren {
   HowWeWorkRoute: typeof HowWeWorkRoute
   IndustriesRoute: typeof IndustriesRoute
   InternationalExpansionRoute: typeof InternationalExpansionRoute
+  LeadershipRoute: typeof LeadershipRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   ServicesRoute: typeof ServicesRoute
@@ -338,6 +351,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leadership': {
+      id: '/leadership'
+      path: '/leadership'
+      fullPath: '/leadership'
+      preLoaderRoute: typeof LeadershipRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/international-expansion': {
@@ -472,6 +492,7 @@ const rootRouteChildren: RootRouteChildren = {
   HowWeWorkRoute: HowWeWorkRoute,
   IndustriesRoute: IndustriesRoute,
   InternationalExpansionRoute: InternationalExpansionRoute,
+  LeadershipRoute: LeadershipRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   ServicesRoute: ServicesRoute,

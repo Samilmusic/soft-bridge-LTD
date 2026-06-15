@@ -52,8 +52,8 @@ function HomePage() {
           <div className="container-page relative grid gap-12 py-20 md:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
               <span className="eyebrow"><Sparkles className="h-3.5 w-3.5" /> UK Consulting & Technology</span>
-              <h1 className="mt-5 text-4xl font-bold leading-[1.05] text-navy md:text-5xl lg:text-6xl">
-                Technology, Consulting & Digital Transformation For Modern Businesses
+              <h1 className="mt-5 text-3xl font-bold leading-[1.1] text-navy sm:text-4xl md:text-5xl lg:text-6xl">
+                Technology, Consulting &amp; Digital Transformation For Modern Businesses
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
                 Helping organizations improve performance through consulting, software development, automation, digital transformation and strategic growth solutions.
@@ -248,7 +248,7 @@ function HomePage() {
         {/* CTA */}
         <section className="section-y">
           <div className="container-page">
-            <div className="overflow-hidden rounded-2xl p-10 md:p-14 lg:p-16" style={{ background: "var(--gradient-navy)" }}>
+            <div className="overflow-hidden rounded-2xl p-6 sm:p-10 md:p-14 lg:p-16" style={{ background: "var(--gradient-navy)" }}>
               <div className="grid gap-8 lg:grid-cols-[1.5fr_1fr] lg:items-center">
                 <div>
                   <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-white">

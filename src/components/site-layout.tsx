@@ -187,11 +187,11 @@ export function SiteFooter() {
 export function PageHero({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
   return (
     <section className="border-b border-border" style={{ background: "var(--gradient-hero)" }}>
-      <div className="container-page py-16 md:py-24">
+      <div className="container-page py-12 sm:py-16 md:py-24">
         {eyebrow && <span className="eyebrow">{eyebrow}</span>}
-        <h1 className="mt-4 text-3xl font-bold text-navy md:text-5xl lg:text-6xl">{title}</h1>
+        <h1 className="mt-4 text-2xl font-bold leading-tight text-navy sm:text-3xl md:text-5xl lg:text-6xl">{title}</h1>
         {description && (
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">{description}</p>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground sm:text-base md:text-lg">{description}</p>
         )}
       </div>
     </section>

@@ -142,5 +142,3 @@ function AboutPage() {
     </PageShell>
   );
 }
-  );
-}

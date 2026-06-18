@@ -13,7 +13,7 @@ export const Route = createFileRoute("/compliance")({
 });
 
 const items = [
-  { icon: Building2, t: "UK Registered Company", d: "Registered in England and Wales (Company No. 561070) and subject to UK corporate law." },
+  { icon: Building2, t: "UK Registered Company", d: "Registered in England and Wales (Company No. 17276108) and subject to UK corporate law." },
   { icon: Briefcase, t: "Professional Services Provider", d: "Operating as a consulting, technology and business advisory firm." },
   { icon: ShieldCheck, t: "Data Protection Commitment", d: "Personal data is processed lawfully, fairly and transparently across every engagement." },
   { icon: Lock, t: "Client Confidentiality", d: "Strict confidentiality obligations apply across all engagements and personnel." },

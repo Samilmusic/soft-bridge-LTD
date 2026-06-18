@@ -56,7 +56,7 @@ function AboutPage() {
             </div>
             <div>
               <dt className="text-muted-foreground">Company Number</dt>
-              <dd className="font-medium text-navy">561070</dd>
+              <dd className="font-medium text-navy">17276108</dd>
             </div>
             <div>
               <dt className="text-muted-foreground">Jurisdiction</dt>

@@ -1,6 +1,6 @@
 export const COMPANY = {
   name: "SOFT BRIDGE LTD",
-  number: "561070",
+  number: "17276108",
   jurisdiction: "England and Wales",
   address: {
     line1: "5 Brayford Square",
@@ -9,7 +9,7 @@ export const COMPANY = {
     country: "United Kingdom",
   },
   email: "info@softbridgeltd.co.uk",
-  phone: "+44 1111 111111",
-  phoneTel: "+441111111111",
+  phone: "+44 7414 233666",
+  phoneTel: "+447414233666",
   website: "https://softbridgeltd.co.uk",
 } as const;

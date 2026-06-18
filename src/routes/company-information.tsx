@@ -14,12 +14,12 @@ export const Route = createFileRoute("/company-information")({
 
 const rows = [
   { icon: Building2, label: "Company Name", value: "SOFT BRIDGE LTD" },
-  { icon: Hash, label: "Company Number", value: "561070" },
+  { icon: Hash, label: "Company Number", value: "17276108" },
   { icon: Scale, label: "Registered In", value: "England and Wales" },
   { icon: MapPin, label: "Registered Office", value: "5 Brayford Square, London E1 0SG, United Kingdom" },
   { icon: Globe, label: "Website", value: "https://softbridgeltd.co.uk" },
   { icon: Mail, label: "Email", value: "info@softbridgeltd.co.uk" },
-  { icon: Phone, label: "Phone", value: "+44 1111 111111" },
+  { icon: Phone, label: "Phone", value: "+44 7414 233666" },
 ];
 
 const activities = [

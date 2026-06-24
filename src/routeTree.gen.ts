@@ -25,6 +25,7 @@ import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ComplianceRouteImport } from './routes/compliance'
 import { Route as CompanyInformationRouteImport } from './routes/company-information'
+import { Route as ClientsRouteImport } from './routes/clients'
 import { Route as CaseStudiesRouteImport } from './routes/case-studies'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as BusinessModelRouteImport } from './routes/business-model'
@@ -112,6 +113,11 @@ const CompanyInformationRoute = CompanyInformationRouteImport.update({
   path: '/company-information',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ClientsRoute = ClientsRouteImport.update({
+  id: '/clients',
+  path: '/clients',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CaseStudiesRoute = CaseStudiesRouteImport.update({
   id: '/case-studies',
   path: '/case-studies',
@@ -150,6 +156,7 @@ export interface FileRoutesByFullPath {
   '/business-model': typeof BusinessModelRoute
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/clients': typeof ClientsRoute
   '/company-information': typeof CompanyInformationRoute
   '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
@@ -174,6 +181,7 @@ export interface FileRoutesByTo {
   '/business-model': typeof BusinessModelRoute
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/clients': typeof ClientsRoute
   '/company-information': typeof CompanyInformationRoute
   '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
@@ -199,6 +207,7 @@ export interface FileRoutesById {
   '/business-model': typeof BusinessModelRoute
   '/careers': typeof CareersRoute
   '/case-studies': typeof CaseStudiesRoute
+  '/clients': typeof ClientsRoute
   '/company-information': typeof CompanyInformationRoute
   '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
@@ -225,6 +234,7 @@ export interface FileRouteTypes {
     | '/business-model'
     | '/careers'
     | '/case-studies'
+    | '/clients'
     | '/company-information'
     | '/compliance'
     | '/contact'
@@ -249,6 +259,7 @@ export interface FileRouteTypes {
     | '/business-model'
     | '/careers'
     | '/case-studies'
+    | '/clients'
     | '/company-information'
     | '/compliance'
     | '/contact'
@@ -273,6 +284,7 @@ export interface FileRouteTypes {
     | '/business-model'
     | '/careers'
     | '/case-studies'
+    | '/clients'
     | '/company-information'
     | '/compliance'
     | '/contact'
@@ -298,6 +310,7 @@ export interface RootRouteChildren {
   BusinessModelRoute: typeof BusinessModelRoute
   CareersRoute: typeof CareersRoute
   CaseStudiesRoute: typeof CaseStudiesRoute
+  ClientsRoute: typeof ClientsRoute
   CompanyInformationRoute: typeof CompanyInformationRoute
   ComplianceRoute: typeof ComplianceRoute
   ContactRoute: typeof ContactRoute
@@ -430,6 +443,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CompanyInformationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/clients': {
+      id: '/clients'
+      path: '/clients'
+      fullPath: '/clients'
+      preLoaderRoute: typeof ClientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/case-studies': {
       id: '/case-studies'
       path: '/case-studies'
@@ -482,6 +502,7 @@ const rootRouteChildren: RootRouteChildren = {
   BusinessModelRoute: BusinessModelRoute,
   CareersRoute: CareersRoute,
   CaseStudiesRoute: CaseStudiesRoute,
+  ClientsRoute: ClientsRoute,
   CompanyInformationRoute: CompanyInformationRoute,
   ComplianceRoute: ComplianceRoute,
   ContactRoute: ContactRoute,

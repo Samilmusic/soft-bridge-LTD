@@ -121,6 +121,7 @@ export function SiteFooter() {
                 ["/industries", "Industries"],
                 ["/leadership", "Leadership"],
                 ["/case-studies", "Case Studies"],
+                ["/clients", "Clients & Partnerships"],
                 ["/international-expansion", "International Expansion"],
                 ["/how-we-work", "How We Work"],
                 ["/business-model", "Business Model"],

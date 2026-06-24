@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, TrustStrip } from "@/components/site-layout";
+import { ClientsSection } from "@/components/clients-section";
 import { TEAM } from "@/data/team";
 import {
   ArrowRight, Briefcase, Cpu, Code2, Bot, Globe2, TrendingUp, Building2,
@@ -244,6 +245,9 @@ function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* CLIENTS & PARTNERSHIPS */}
+        <ClientsSection />
 
         {/* CTA */}
         <section className="section-y">

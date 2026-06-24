@@ -4,7 +4,7 @@ import type {} from "@tanstack/react-start";
 const BASE_URL = "";
 
 const paths = [
-  "/", "/about", "/services", "/industries", "/case-studies",
+  "/", "/about", "/services", "/industries", "/case-studies", "/clients",
   "/international-expansion", "/how-we-work", "/business-model",
   "/company-information", "/compliance", "/leadership", "/careers", "/faq", "/contact",
   "/privacy-policy", "/terms", "/refund-policy", "/cookie-policy",
